@@ -7,8 +7,9 @@ var $mongo = (function(){
      function getInstanceStorage(callback){
         if(connStorage) return callback(null, Grid(connStorage, mongodb));
 
-        MongoClient.connect('mongodb://AdminStorageGS:ughrUGHRGrgt__rtjdr$H8734tGUYhhyg86@159.203.90.22:27017/storage',{autoReconnect : true}, function(err, client){
+        MongoClient.connect('mongodb://AdminStorageGS:dfgidfuhYFGYGYU865gGYF76tgg76T76GY@db.granasocial.com.br:27017/storage',{autoReconnect : true}, function(err, client){
         //MongoClient.connect('mongodb://127.0.0.1:27017',{autoReconnect : true}, function(err, client){
+            log(err)
 
             if(err) return callback(ErrorDB());
             connStorage = client.db('storage');
