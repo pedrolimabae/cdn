@@ -618,14 +618,14 @@ var num=numberPainel;
 function updatePainel(){
 	$ajax.get('/api/update', function(res){
         if(res&&res.views){
-            var element = res.views;
-            showHtmlPainel(element.v_day, parseInt(Id('v_day').innerHTML));
+            var element = res.views;      
+            showHtmlPainel(element.v_day, parseInt(Id('v_day').innerHTML), element.m_day);
 			showHtmlLinks(res.links)
         }
 	}, null, true)    
 }
 var timeUpdate=0;
-function showHtmlPainel(number, atual){	
+function showHtmlPainel(number, atual, money){	
 
 	if(numberPainel==number) return;
 
@@ -650,6 +650,7 @@ function showHtmlPainel(number, atual){
             num++;
             timeUpdate=1;
     	}else{
+    		Id('m_day').innerHTML='R$'+money;
     		clearInterval(loop);
     		timeUpdate=0;
     	}     
