@@ -1,3 +1,10 @@
+function getRecaptchaResponse(){
+    var v = grecaptcha.getResponse();
+    if(v.length == 0){
+        throw infoBlog('Você é um robô?','Informe que você não é um robô!');
+    }         
+    return v;  
+}
 $login = (function(){
 	    var isInIFrame = (window.location != window.parent.location);
 		return {
@@ -15,7 +22,6 @@ $login = (function(){
 				    	Id('password').value='';
 				    	Id('email').value='';
 				    }
-				    grecaptcha.reset();
 				},btn);
 				function closeModal(){
 					window.parent.Id('modal').innerHTML='';
