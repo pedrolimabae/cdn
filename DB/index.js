@@ -7,7 +7,7 @@ var $mongo = (function(){
      function getInstanceStorage(callback){
         if(connStorage) return callback(null, Grid(connStorage, mongodb));
 
-        MongoClient.connect('mongodb://root:NuIdomIarrawte3@ds115931.mlab.com:15931/granasocial',{autoReconnect : true}, function(err, client){
+        MongoClient.connect('mongodb://AdminDbGs:dfgidfuhYFGYGYUdrtdrtgg76T76GY@159.65.171.159:27017/granasocial',{autoReconnect : true}, function(err, client){         
         //MongoClient.connect('mongodb://127.0.0.1:27017',{autoReconnect : true}, function(err, client){
             log(err)
 
